@@ -5,7 +5,7 @@
             <p class="py-2 w-md-75 w-100 text-center">If you would like to have a conversation, please feel free to send an email using the contact form or message me directly at <span class="text-primary">patkeenan.dev@gmail.com</span></p>
         </div>
         <div class="col-12 col-md">
-            <form class="p-3" method="POST">
+            <form class="p-3" method="POST" action="{% url 'home' %}">
                 {% csrf_token %}
                 <label for="email">Name</label>
                 <input type="text" class="form-control mb-2" name="name" required>
