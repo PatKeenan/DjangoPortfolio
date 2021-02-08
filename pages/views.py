@@ -19,7 +19,7 @@ def homeView(request):
         context = {
             message: "Thanks for the contact!"
         }
-        return redirect("home")
+        return render(request, "index.html", context)
     projects = Project.objects.all()
     projects_for_home = projects[:5]
     context = {
