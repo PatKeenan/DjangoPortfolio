@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title%}Pat Keenan{% endblock %}
+{% block vue %}<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.9.0/devicon.min.css">{% endblock %}
+
+
+{% block content %}
+<div class="container-fluid container-lg ds-bg shadow w-100 py-5 hero-background-image mt-3">
+    <div class="row w-100 h-100 justify-content-center d-flex align-items-center m-auto py-5">
+        <div class="col-12 d-flex justify-content-center align-items-center flex-column">
+            <img src="../static/images/profile.jpg" alt="" class="avatar my-2 shadow">
+            <div class="d-flex">
+                <a href="https://www.instagram.com/patkeenan316/"><i class="bi bi-instagram ls-text fs-3 p-2"></i></a>
+                <a href="https://www.instagram.com/patkeenan316/"><i class="bi bi-facebook da-text fs-3 p-2"></i></a>
+                <a href="https://www.instagram.com/patkeenan316/"><i class="bi bi-github ls-text fs-3 p-2"></i></a>
+                <a href="https://www.instagram.com/patkeenan316/"><i class="bi bi-linkedin da-text fs-3 p-2"></i></a>
+            </div>
+            <h2 class="ls-text">Hi, I'm Pat Keenan</h2>
+            <p class="ls-text text-center py-2">I'm a self-taught developer living in Asbury Park NJ, with a passion for Angualr and Django</p>
+        </div>
+    </div>
+</div>
+<main>
+    <section class="container-fluid container-lg px-lg-0 py-3">
+        {% include './projects.html' %}
+    </section>
+    <section class="container-fluid px-lg-0 py-3 ds-bg"> 
+        {% include './about_me.html' %} 
+    </section>
+    <section class="container-fluid px-lg-0 py-5"> 
+        {% include './contact.html' %} 
+    </section>
+    
+</main>
+
+
+{% endblock %}
+{% block script %}
+{% endblock script %}

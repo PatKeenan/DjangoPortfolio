@@ -1,0 +1,35 @@
+
+{% extends 'base.html' %}
+{% block title%}Pat Keenan | Projects{% endblock %}
+{% block vue %}{% endblock %}
+
+
+{% block content %}
+<section class="container-fluid container-lg px-lg-0 py-3">
+    <article class="p-0 m-0">
+        <h3 class="py-2">Projects</h3>
+        <div class="row row-cols-1 row-cols-md-2 g-2">
+            {% for project in object_list %}
+            <div class="col">
+                <div class="my-card bg-white shadow-sm">
+                    <a href="{% url 'project-detail' project.slug %}">
+                        <img src="{{ project.featured_image.url }}" class="card-img" alt="{{ project.image_description }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ project.title }}</h5>
+                            <d class="d-flex pb-2">
+                                {% for lang in project.langs.all %} <p class="pe-2 da-text">{{ lang.language }}</p> {% endfor %}
+                            </d>
+                            <p class="card-text pb-2 card-description">{{ project.description }}</p>
+                            <a href="{% url 'project-detail' project.slug %}"><button class="btn ds-bg ls-text" aria-label="View Project">View Project</button></a>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </article>
+</section>
+    
+{% endblock %}
+
+

@@ -1,0 +1,22 @@
+<section class="px-0 m-0 pt-3 pb-4 container m-auto">
+    <h4 class="pb-3">Recent Projects</h4>
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        {% for pro in projects %}
+        <div class="col">
+            <div class="my-card bg-white shadow-sm">
+                <a href="{% url 'project-detail' pro.slug %}">
+                    <img src="{{ pro.featured_image.url }}" class="card-img" alt="{{ pro.image_description }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ pro.title}}</h5>
+                        {% for lan in pro.langs.all %}
+                        <p class="da-text pr-2">{{ lan.languages }}</p>
+                        {% endfor %}
+                        <p class="card-text mb-2">{{ pro.description }}</p>
+                        <a href="{% url 'project-detail' pro.slug %}"><button class="btn ds-bg ls-text" aria-label="View Project">View Project</button></a>
+                    </div>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>

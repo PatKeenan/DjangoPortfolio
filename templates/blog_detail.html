@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title%}
+{{ blogpost.title|capfirst}}
+{% endblock %}
+
+{% block metaTags %}
+<meta name="description" content="{{ blogpost.description }}">
+
+<meta property="og:title" content="{{ blogpost.title }}" />
+
+<meta property="og:url" content="http://127.0.0.1:8000/blog/{{ blogpost.slug }}/" />
+
+<meta property="og:description" content="{{ blogpost.description }}" />
+
+<meta property="og:image" content="http://127.0.0.1:8000{{ blogpost.featured_image.url }}" />
+
+<meta property="og:type" content="article" />
+
+<meta name="twitter:card" content="summary" />
+
+<meta name="twitter:title" content="{{ blogpost.title }}" />
+
+<meta name="twitter:description" content="{{ blogpost.description }}" />
+
+<meta name="twitter:image" content="http://127.0.0.1:8000{{ blogpost.featured_image.url }}" />
+
+{% endblock %}
+
+{% block vue %}{% endblock %}
+
+<!-- Start of Details Page -->
+
+{% block content %}
+<section class="container px-3 pb-5" style="max-width: 900px;">
+    <nav aria-label="breadcrumb" class="pt-3 mb-0">
+        <ol class="breadcrumb da-text">
+            <li class="breadcrumb-item da-text"><a href="{% url 'home' %}" class="da-text">Home</a></li>
+            <li class="breadcrumb-item da-text"><a href="{% url 'blog' %}" class="da-text">Blog</a></li>
+            <li class="breadcrumb-item da-text">{{ blogpost.title|capfirst }}</li>
+        </ol>
+    </nav>
+    <div class="d-flex w-100 justify-content-between align-items-center px-0 mx-0">
+        <h2 class="ds-text py-1 detail-title">{{ blogpost.title|capfirst }}</h2>
+    </div>
+     
+     <div class="d-flex justify-content-between align-items-center w-100">
+         <div class="d-flex flex-row">
+             {% for lan in blogpost.langs.all %}
+            <p class="da-text pe-2">{{ lan.language }}</p>
+            {% endfor %}
+         </div>
+            <p class="fst-italic da-text">{{ blogpost.date_added|date}}</p>
+     </div>
+     <hr>
+    <img src="{{ blogpost.featured_image.url }}" alt="" class="my-2 px-0 mx-0 blog-detail-featured-image">
+    <hr>
+    <div class="blog-body pb-3">
+        {{ blogpost.body|safe }}
+        <hr>
+        <a href="{% url 'blog' %}"><button class="btn ds-bg ls-text">Go Back</button></a>
+    </div>
+    
+
+</section>
+{% endblock %}
+{% block script %}{% endblock %}

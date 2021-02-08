@@ -1,0 +1,61 @@
+/* Resets */
+html,body,a,p,li,ul,h1,h2,h3,h4,h5,h6,button{
+    padding: 0;
+    margin: 0;
+    color: #424757;
+}
+a{
+    text-decoration: none;
+    color: #424757;
+}
+a:active, button:active{
+    outline: none;
+}
+a:focus, button:focus{
+    outline: none;
+}
+
+
+/* --------------- Fonts --------------- */
+
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Montserrat', sans-serif;
+}
+p,a,button,li,ul{
+    font-family: 'Roboto', sans-serif;
+}
+
+/* --------------- Colors --------------- */
+
+.ls-bg{
+    background-color: #F3EFF4 !important;
+}
+.ls-text{
+    color: #F3EFF4 !important;
+}
+.la-bg{
+    background-color: #8E898D !important;
+;
+}
+.la-text{
+    color: #8E898D !important;
+}
+.mb-bg{
+    background-color: #A39CA3 !important;
+}
+.mb-text{
+    color: #A39CA3 !important;
+}
+.da-bg{
+    background-color: #878285 !important;
+}
+.da-text{
+    color: #878285 !important;
+}
+.ds-bg{
+    background-color: #424757 !important;
+}
+.ds-text{
+    color: #424757 !important;
+}
+

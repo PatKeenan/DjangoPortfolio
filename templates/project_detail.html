@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title%}
+{{ project.title|capfirst}}
+{% endblock %}
+
+{% block metaTags %}
+<meta name="description" content="{{ project.description }}">
+
+<meta property="og:title" content="{{ project.title }}" />
+
+<meta property="og:url" content="http://127.0.0.1:8000/blog/{{ project.slug }}/" />
+
+<meta property="og:description" content="{{ project.description }}" />
+
+<meta property="og:image" content="http://127.0.0.1:8000{{ project.featured_image.url }}" />
+
+<meta property="og:type" content="article" />
+
+<meta name="twitter:card" content="summary" />
+
+<meta name="twitter:title" content="{{ project.title }}" />
+
+<meta name="twitter:description" content="{{ project.description }}" />
+
+<meta name="twitter:image" content="http://127.0.0.1:8000{{ project.featured_image.url }}" />
+
+{% endblock %}
+
+{% block vue %}{% endblock %}
+
+<!-- Start of Details Page -->
+
+{% block content %}
+<div class="container px-3 pb-5" style="max-width: 900px;" id="top">
+    <nav aria-label="breadcrumb" class="pt-3 mb-0">
+        <ol class="breadcrumb da-text">
+            <li class="breadcrumb-item da-text"><a href="{% url 'home' %}" class="da-text">Home</a></li>
+            <li class="breadcrumb-item da-text"><a href="{% url 'projects' %}" class="da-text">Projects</a></li>
+            <li class="breadcrumb-item da-text">{{ project.title|capfirst }}</li>
+        </ol>
+    </nav>
+    <div class="d-flex w-100 justify-content-between align-items-center px-0 mx-0 pb-3">
+        <h2 class="ds-text py-1 detail-title">{{ project.title|capfirst }}</h2>
+        <div class="d-flex justify-content-center- align-items-center flex-row">
+            {% if project.github_link %}
+            <a href="https://{{ project.github_link }}" rel="noreferrer" class="pe-2" target="_blank"><button class="btn da-bg ls-text d-flex justify-content-center align-items-center" aria-label="View on Github"><i class="bi bi-github"></i></button></a>
+            <a href="https://{{ project.project_link }}"rel="noreferrer" target="_blank"><button class="btn ds-bg ls-text" aria-label="View Project Site">View Site</button></a>
+            {% else %}
+            <a href="https://{{ project.project_link }}" rel="noreferrer" target="_blank"><button class="btn ds-bg ls-text"
+                    aria-label="View Project Site">View Site</button></a>
+            {% endif %}
+        </div>
+        
+    </div>
+     
+     <div class="d-flex justify-content-between align-items-center w-100">
+         <div class="d-flex flex-row">
+             {% for lan in project.langs.all %}
+            <p class="da-text pe-2">{{ lan.language }}</p>
+            {% endfor %}
+         </div>
+            <p class="fst-italic da-text">{{ project.date_added|date}}</p>
+     </div>
+     <hr>
+    <img src="{{ project.featured_image.url }}" alt="" class="my-2 px-0 mx-0 blog-detail-featured-image">
+    <hr>
+    <div class="blog-body pb-4 pt-2">
+        {{ project.body|safe }}
+        <hr>
+        <a href="{% url 'projects' %}" class="d-flex justify-content-start align-items-center"><i class="bi bi-arrow-left-circle pe-2 py-0 my-0"></i> Back</a>
+    </div>
+</div>
+
+
+{% endblock %}
+{% block script %}
+{% endblock %}

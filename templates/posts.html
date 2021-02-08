@@ -1,0 +1,52 @@
+<section class="p-0 m-0">
+    <h3 class="py-2">Recent Posts</h3>
+    <div class="row row-cols-1 row-cols-md-3 g-2">
+        {% for pro in projects %}
+        <div class="col">
+            <div class="my-card bg-white shadow-sm">
+                <a href="">
+                    <img src="" class="card-img" alt="...">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="card-title">{{ pro.title}}</h5>
+                            {% for lan in pro.langs.all %}
+                            <p class="pe-2">{{ lan.languages}}</p>
+                        </div>
+                        <p class="card-text">{{ pro.description }}</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+        <div class="col">
+            <div class="my-card bg-white shadow-sm">
+                <img src="." class="card-img" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Realtor CRM</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                        additional content.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

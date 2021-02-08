@@ -1,0 +1,38 @@
+
+{% extends 'base.html' %}
+{% block title%}Pat Keenan | Blog{% endblock %}
+{% block vue %}{% endblock %}
+
+
+{% block content %}
+<section class="container-fluid container-lg px-lg-0 py-3">
+    <article class="p-0 m-0">
+        <h3 class="py-2">Blog</h3>
+        <div class="row row-cols-1 row-cols-md-2 g-2">
+            {% for blog in object_list %}
+            <div class="col">
+                <div class="my-card bg-white shadow-sm">
+                    <a href="">
+                        <img src="{{ blog.featured_image.url }}" class="card-img" alt="{{ blog.image_description }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ blog.title }}</h5>
+                            <d class="d-flex pb-2">
+                                {% for lang in blog.langs.all %} <p class="pe-2 da-text">{{ lang.language }}</p> {% endfor %}
+                            </d>
+                            <p class="card-text pb-2 card-description">{{ blog.description }}</p>
+                            <a href="{% url 'blog-detail' blog.slug %}"><button class="btn ds-bg ls-text" aria-label="View Post">View Post</button></a>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </article>
+</section>
+    
+
+
+
+{% endblock %}
+
+
