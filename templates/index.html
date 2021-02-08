@@ -1,7 +1,15 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title%}Pat Keenan{% endblock %}
+{% block title%}Pat Keenan | Developer{% endblock %}
+{% block metaTags %}
+<meta name="description" content="Pat Keenan | Self-taught developer living in Asbury Park NJ with a passion for Django and Angular.">
+<meta property="og:title" content="Pat Keenan | Developer" />
+<meta property="og:url" content="https://www.patkeenan.dev/" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Pat Keenan | Developer" />
+<meta name="twitter:description" content="Pat Keenan | Self-taught developer living in Asbury Park NJ with a passion for Django and Angular." />
+{% endblock }
 {% block vue %}<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.9.0/devicon.min.css">{% endblock %}
 
 
@@ -11,10 +19,10 @@
         <div class="col-12 d-flex justify-content-center align-items-center flex-column">
             <img src="../static/images/profile.jpg" alt="" class="avatar my-2 shadow">
             <div class="d-flex">
-                <a href="https://www.instagram.com/patkeenan316/"><i class="bi bi-instagram ls-text fs-3 p-2"></i></a>
-                <a href="https://www.instagram.com/patkeenan316/"><i class="bi bi-facebook da-text fs-3 p-2"></i></a>
-                <a href="https://www.instagram.com/patkeenan316/"><i class="bi bi-github ls-text fs-3 p-2"></i></a>
-                <a href="https://www.instagram.com/patkeenan316/"><i class="bi bi-linkedin da-text fs-3 p-2"></i></a>
+                <a href="https://www.instagram.com/patkeenan316/" rel="noreferrer" target="_blank"><i class="bi bi-instagram ls-text fs-3 p-2"></i></a>
+                <a href="https://www.facebook.com/pat.keenan.nj" rel="noreferrer" target="_blank"><i class="bi bi-facebook da-text fs-3 p-2"></i></a>
+                <a href="https://github.com/PatKeenan/" rel="noreferrer" target="_blank"><i class="bi bi-github ls-text fs-3 p-2"></i></a>
+                <a href="https://www.linkedin.com/in/pat-keenan/" rel="noreferrer" target="_blank"><i class="bi bi-linkedin da-text fs-3 p-2"></i></a>
             </div>
             <h2 class="ls-text">Hi, I'm Pat Keenan</h2>
             <p class="ls-text text-center py-2">I'm a self-taught developer living in Asbury Park NJ, with a passion for Angualr and Django</p>
