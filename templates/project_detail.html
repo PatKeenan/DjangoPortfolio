@@ -45,10 +45,10 @@
         <h2 class="ds-text py-1 detail-title">{{ project.title|capfirst }}</h2>
         <div class="d-flex justify-content-center- align-items-center flex-row">
             {% if project.github_link %}
-            <a href="https://{{ project.github_link }}" rel="noreferrer" class="pe-2" target="_blank"><button class="btn da-bg ls-text d-flex justify-content-center align-items-center" aria-label="View on Github"><i class="bi bi-github"></i></button></a>
-            <a href="https://{{ project.project_link }}"rel="noreferrer" target="_blank"><button class="btn ds-bg ls-text" aria-label="View Project Site">View Site</button></a>
+            <a href="{{ project.github_link }}" rel="noreferrer" class="pe-2" target="_blank"><button class="btn da-bg ls-text d-flex justify-content-center align-items-center" aria-label="View on Github"><i class="bi bi-github"></i></button></a>
+            <a href="{{ project.project_link }}"rel="noreferrer" target="_blank"><button class="btn ds-bg ls-text" aria-label="View Project Site">View Site</button></a>
             {% else %}
-            <a href="https://{{ project.project_link }}" rel="noreferrer" target="_blank"><button class="btn ds-bg ls-text"
+            <a href="{{ project.project_link }}" rel="noreferrer" target="_blank"><button class="btn ds-bg ls-text"
                     aria-label="View Project Site">View Site</button></a>
             {% endif %}
         </div>
