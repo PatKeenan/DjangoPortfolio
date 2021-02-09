@@ -206,4 +206,8 @@ p,a,button,li,ul{
     .blog-body > p{
         font-size: 21px !important;
     }
+    .btn-top {
+        max-width: 81.7px !important;
+        font-size: 14px !important;
+    }
 }

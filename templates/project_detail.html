@@ -47,7 +47,7 @@
     </nav>
     <div class="d-flex w-100 justify-content-between align-items-center px-0 mx-0 pb-3">
         <h2 class="ds-text py-1 detail-title">{{ project.title|capfirst }}</h2>
-        <div class="d-flex justify-content-center- align-items-center flex-row">
+        <div class="d-md-flex d-none justify-content-center- align-items-center flex-row">
             {% if project.github_link %}
             <a href="{{ project.github_link }}" rel="noreferrer" class="pe-2" target="_blank"><button class="btn da-bg ls-text d-flex justify-content-center align-items-center" aria-label="View on Github"><i class="bi bi-github"></i></button></a>
             <a href="{{ project.project_link }}"rel="noreferrer" target="_blank"><button class="btn ds-bg ls-text" aria-label="View Project Site">View Site</button></a>
@@ -56,7 +56,6 @@
                     aria-label="View Project Site">View Site</button></a>
             {% endif %}
         </div>
-        
     </div>
      
      <div class="d-flex justify-content-between align-items-center w-100">
@@ -65,6 +64,20 @@
             <p class="da-text blog-langs ps-0 pe-0 ms-0 me-0">{{ lan.language }}</p>
             {% endfor %}
          </div>
+        <div class="d-md-none d-flex justify-content-center align-items-center flex-row">
+             {% if project.github_link %} 
+             <a href="{{ project.github_link }}" rel="noreferrer" class="pe-2" target="_blank">
+                 <button class="btn da-bg ls-text d-flex justify-content-center align-items-center" aria-label="View on Github">
+                     <i class="bi bi-github"></i>
+                </button>
+            </a>
+            <a href="{{ project.project_link }}" rel="noreferrer" target="_blank"><button class="btn ds-bg ls-text"
+                    aria-label="View Project Site">View Site</button></a> 
+            {% else %} 
+                <a href="{{ project.project_link }}" rel="noreferrer" target="_blank"><button class="btn ds-bg ls-text" aria-label="View Project Site">View
+                    Site</button></a>
+                     {% endif %}
+        </div>
             <!-- <p class="fst-italic da-text">{{ project.date_added|date}}</p> -->
      </div>
      <hr>
