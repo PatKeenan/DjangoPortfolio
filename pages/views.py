@@ -22,7 +22,7 @@ def homeView(request):
         return render(request, "index.html", context)
     project = Project.objects.all()[:4]
     context = {
-        "project": project
+        "project_home": project
     }
     return render(request, "index.html", context)
 
