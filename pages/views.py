@@ -20,10 +20,9 @@ def homeView(request):
             message: "Thanks for the contact!"
         }
         return render(request, "index.html", context)
-    projects = Project.objects.all()
-    projects_for_home = projects[:5]
+    project = Project.objects.all()[:4]
     context = {
-        "projects": projects_for_home
+        "project": project
     }
     return render(request, "index.html", context)
 

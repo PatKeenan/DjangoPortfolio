@@ -1,7 +1,7 @@
 <section class="px-0 m-0 pt-3 pb-4 container m-auto">
     <h4 class="pb-3">Recent Projects</h4>
     <div class="row row-cols-1 row-cols-md-2 g-4">
-        {% for pro in projects %}
+        {% for pro in project_home %}
         <div class="col">
             <div class="my-card bg-white shadow-sm">
                 <a href="{% url 'project-detail' pro.slug %}">
