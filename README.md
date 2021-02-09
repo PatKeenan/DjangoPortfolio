@@ -113,17 +113,7 @@ rs
 ```
 
 ## Views and Templates
-Now that we have our project set up and ready to go, we have to
+Now that we have our project set up and ready to go, it's time to start creating the basic views and templates of the site.
+Everyone has their own approach and you might find a different way that works but this is the way I like to do it. 
 
-``` js
-function simple(){
-    let
-}
-```
-``` python
-def NewFunc():
-    variable = "stirng"
-```
-``` html
-<h1>New Title</h1>
-```
+If you've ever worked with Angular, React, or Vue, this will be familiar to you. I start by creating a base.html file which will house all html we want on every page. Sections like head, the navigation, the footer, maybe some scripts and imports will all be located on this template. All the other templates will alays refer back to the base.html file which i'll show you in the next section.
