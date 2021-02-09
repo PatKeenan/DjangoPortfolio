@@ -16,6 +16,8 @@
 
 <meta property="og:image" content="{{ project.featured_image.url }}" />
 
+<meta property="og:image:secure_url" content="{{ project.featured_image.url }}" />
+
 <meta property="og:type" content="article" />
 
 <meta name="twitter:card" content="summary" />
@@ -25,6 +27,7 @@
 <meta name="twitter:description" content="{{ project.description }}" />
 
 <meta name="twitter:image" content="{{ project.featured_image.url }}" />
+
 <link rel="image_src" href="{{ project.featured_image.url }}">
 
 {% endblock %}
@@ -59,7 +62,7 @@
      <div class="d-flex justify-content-between align-items-center w-100">
          <div class="d-flex flex-row">
              {% for lan in project.langs.all %}
-            <p class="da-text pe-2">{{ lan.language }}</p>
+            <p class="da-text blog-langs ps-0 pe-0 ms-0 me-0">{{ lan.language }}</p>
             {% endfor %}
          </div>
             <p class="fst-italic da-text">{{ project.date_added|date}}</p>

@@ -137,7 +137,7 @@ p,a,button,li,ul{
 }
 
 .skill-cards{
-    min-height: 218px;
+    min-height: 242px;
 }
 .text-small{
     font-size: 11px;
@@ -145,13 +145,6 @@ p,a,button,li,ul{
 .rounded-corner{
     border-radius: 10px;
 }
-/* .card-description{
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  line-height: 2em;
-  -webkit-box-orient: vertical;  
-  overflow: hidden;
-} */
 
 /* -------------- Blog Page --------------   */
 
@@ -192,13 +185,19 @@ p,a,button,li,ul{
     padding:5px 10px;
 }
 .blog-body pre{
-     padding: 15px 10px;
+    padding: 15px 10px;
     background-color: #313244;
     color: rgb(233, 233, 233) !important;
 }
 .detail-title{
     font-weight: 800 !important;
     letter-spacing: 1px;
+}
+
+.blog-langs:nth-child(n+2)::before{
+    content: "|";
+    color: #878285;
+    padding: 0 5px;
 }
 .max{
     max-width: 1000px;

@@ -48,7 +48,7 @@
      <div class="d-flex justify-content-between align-items-center w-100">
          <div class="d-flex flex-row">
              {% for lan in blogpost.langs.all %}
-            <p class="da-text pe-2">{{ lan.language }}</p>
+            <p class="da-text pe-2 blog-langs">{{ lan.language }}</p>
             {% endfor %}
          </div>
             <p class="fst-italic da-text">{{ blogpost.date_added|date}}</p>
@@ -62,7 +62,6 @@
         <a href="{% url 'blog' %}"><button class="btn ds-bg ls-text">Go Back</button></a>
     </div>
     
-
 </section>
 {% endblock %}
 {% block script %}{% endblock %}
