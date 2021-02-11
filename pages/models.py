@@ -45,6 +45,7 @@ class BlogPost(models.Model):
     project_link = models.CharField(
         verbose_name="ProjectLink", max_length=200, blank=True, null=True)
     date_added = models.DateTimeField(auto_now_add=True)
+    featured = models.BooleanField(verbose_name ="Featured Post", default=False, blank=True)
     body = RichTextUploadingField(blank=True, null=True)
     
     
@@ -80,6 +81,8 @@ class Project(models.Model):
     project_link = models.CharField(
         verbose_name="ProjectLink", max_length=200, blank=True, null=True)
     date_added = models.DateTimeField(auto_now_add=True)
+    featured = models.BooleanField(verbose_name="Featured Post",
+                        default=False, blank=True)
     body = RichTextUploadingField(blank=True, null=True)
     
 
