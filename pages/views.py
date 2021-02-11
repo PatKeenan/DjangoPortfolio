@@ -20,7 +20,7 @@ def homeView(request):
             message: "Thanks for the contact!"
         }
         return render(request, "index.html", context)
-    project = Project.objects.all()[:4]
+    project = Project.objects.filter(featured = True)
     context = {
         "project_home": project
     }
